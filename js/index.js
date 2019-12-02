@@ -42,7 +42,6 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let nav = document.querySelectorAll('nav a');
-
 for (let i = 0; i < nav.length; i ++){
   nav[i].innerHTML = siteContent["nav"][`nav-item-${i + 1}`];
 }
@@ -50,3 +49,8 @@ for (let i = 0; i < nav.length; i ++){
 const title = document.querySelector("h1");
 title.innerHTML = siteContent['cta']['h1'];
 
+const button = document.querySelector(".cta-text button");
+button.innerHTML = siteContent["cta"]["button"];
+
+const ctaImg = document.querySelector("#cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
