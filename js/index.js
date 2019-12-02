@@ -40,3 +40,48 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navParent = document.querySelector('nav');
+let nav = document.querySelectorAll('nav a');
+for (let i = 0; i < nav.length; i ++){
+  nav[i].innerHTML = siteContent["nav"][`nav-item-${i + 1}`];
+  nav[i].style.color = 'green';
+}
+const greg = document.createElement('a');
+greg.innerHTML = "Greg";
+navParent.prepend(greg);
+const jeff = document.createElement('a');
+jeff.innerHTML = "Jeff";
+navParent.append(jeff);
+
+
+const title = document.querySelector("h1");
+title.innerHTML = siteContent['cta']['h1'];
+
+const button = document.querySelector(".cta-text button");
+button.innerHTML = siteContent["cta"]["button"];
+
+const ctaImg = document.querySelector("#cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const textContent = document.querySelectorAll(".text-content");
+const nameList = ["features", "about", "services", "product", "vision"]
+
+
+for (let i = 0; i < textContent.length; i ++){
+  const childContent = textContent[i].childNodes;
+  childContent[1].innerHTML = siteContent["main-content"][`${nameList[i]}-h4`];
+  childContent[3].innerHTML = siteContent["main-content"][`${nameList[i]}-content`];
+}
+
+const middleImg = document.querySelector(".middle-img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+const contactChildren = document.querySelector(".contact").childNodes;
+contactChildren[1].innerHTML = siteContent["contact"]["contact-h4"];
+contactChildren[3].innerHTML = siteContent["contact"]["address"];
+contactChildren[5].innerHTML = siteContent["contact"]["phone"];
+contactChildren[7].innerHTML = siteContent["contact"]["email"];
+
+const copyright = document.querySelector('footer p');
+copyright.innerHTML = siteContent.footer.copyright;
