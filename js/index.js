@@ -54,3 +54,16 @@ button.innerHTML = siteContent["cta"]["button"];
 
 const ctaImg = document.querySelector("#cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const textContent = document.querySelectorAll(".text-content");
+const nameList = ["features", "about", "services", "product", "vision"]
+
+
+for (let i = 0; i < textContent.length; i ++){
+  const childContent = textContent[i].childNodes;
+  childContent[1].innerHTML = siteContent["main-content"][`${nameList[i]}-h4`];
+  childContent[3].innerHTML = siteContent["main-content"][`${nameList[i]}-content`];
+}
+
+const middleImg = document.querySelector(".middle-img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
